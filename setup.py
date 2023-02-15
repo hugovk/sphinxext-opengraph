@@ -14,7 +14,10 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/wpilibsuite/sphinxext-opengraph",
     license="LICENSE.md",
-    install_requires=["sphinx>=4.0", "matplotlib"],
+    install_requires=["sphinx>=4.0"],
+    extras_require={
+        "matplotlib": ["matplotlib"],
+    },
     packages=["sphinxext/opengraph"],
     include_package_data=True,
     package_data={"sphinxext.opengraph": ["sphinxext/opengraph/_static/*"]},

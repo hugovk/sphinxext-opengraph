@@ -1,12 +1,7 @@
 """Build a PNG card for each page meant for social media."""
 import hashlib
 from pathlib import Path
-import matplotlib
-from matplotlib import pyplot as plt
-import matplotlib.image as mpimg
 from sphinx.util import logging
-
-matplotlib.use("agg")
 
 LOGGER = logging.getLogger(__name__)
 HERE = Path(__file__).parent
@@ -181,6 +176,12 @@ def create_social_card_objects(
     font="Roboto",
 ):
     """Create the Matplotlib objects for the first time."""
+    import matplotlib
+    from matplotlib import pyplot as plt
+    import matplotlib.image as mpimg
+
+    matplotlib.use("agg")
+
     # Load the Roboto font
     # TODO: Currently the `font` parameter above does nothing
     #   Should instead make it possible to load remote fonts or local fonts
